@@ -180,7 +180,7 @@ Deploy() {
 
 	Gui, Default:Submit, Nohide
 	Gui, Default:Minimize
-	MsgBox, Make sure there are no tabs open in RealWare, and the lookup field is empty, then press OK.
+	MsgBox, Make sure you are in the correct Tax Year, there are no tabs open in RealWare, and the lookup field is empty, then press OK.
 	
 
 ;Declare global variables from GUI and File
@@ -1030,10 +1030,12 @@ else If (Multi = 1)
 			{
 				InputBox, Imp, Improvements, Improvement Value?,
 				Sleep 100
+				MsgBox %Impvaluey%
 				MouseClick left, %Impvaluex%, %ImpValuey%
 				Sleep 100
 				SendInput %Imp%
 				Sleep 100
+				ImpValuey += 19
 			}
 		Sleep 500
 		SendInput {ctrl down}s{ctrl up}

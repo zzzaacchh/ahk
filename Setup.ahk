@@ -24,6 +24,8 @@ Start:
 Gui, Submit, NoHide
 Gui, Minimize
 
+MsgBox, Open an Account and an Appeal in RealWare, then hit OK.
+
 FileDelete, C:\Users\%A_UserName%\Documents\ahk\coordinates.ahk
 
 ;---Write Tax Year and Field Number to Coordinates file--------
@@ -45,13 +47,13 @@ IF (Mo = 2)
     }
 else if (Mo = 1) 
     {
-        MonS := (MonRight - 350)
+        MonS := (MonLeft + 100)
         MonT := (MonTop + 50)
     }
 
 ;----Populate and Loop Through Array, Writing Coordinates to File-----------------
 Array := ["Lookup", "Real", "Account", "LandValue", "DefaultApproach", "Improvements", "Reconciled", "ImpValue", "TotalValue", "Appeals", "Detail", "Decision", "Reason", "Notes", "NoteField", "Summary", "Show", "DecisionBy"]
-MsgBox % Array.Length()
+
 Loop 
     {
     if (A_Index <= Array.Length()) 
